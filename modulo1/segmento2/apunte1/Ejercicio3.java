@@ -4,8 +4,6 @@ public class Ejercicio3{
 	public static void main(String args[]){
 		Scanner teclado = new Scanner(System.in);
 		
-		
-
 		System.out.print("Ingrese un numero ");
 		Integer num1;
 		num1 = teclado.nextInt();
