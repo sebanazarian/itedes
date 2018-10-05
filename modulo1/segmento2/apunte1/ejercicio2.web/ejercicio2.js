@@ -1,14 +1,15 @@
 function saludar(){
 	
-	const dni = prompt('Ingrese su dni');
-	const nombre = prompt('Ingrese su nombre: ');
-	const apellido = prompt('Ingrese su apellido: ');
-	const direccion = prompt('Ingrese su direccion: ');
-	const telefono = prompt('Ingrese su telefono: ');
 	
-	alert(`DNI ${dni}`);
-	alert(`Nombre ${nombre}`);
+	var dni = prompt('Ingrese su dni: ');
+	var nombre = prompt('Ingrese su nombre: ');
+	var apellido = prompt('Ingrese su apellido: ');
+	var direccion = prompt('Ingrese su direccion: ');
+	var telefono = prompt('Ingrese su telefono: ');
+	
+	alert(`DNI: ${dni}`);
+	alert(`Nombre: ${nombre}`);
 	alert(`Apellido ${apellido}`);
-	alert(`Direccion ${direccion}`);
-	alert(`Telefono ${telefono}`);
+	alert(`direccion ${direccion}`);
+	alert(`telefono ${telefono}`);
 }
