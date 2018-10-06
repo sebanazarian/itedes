@@ -5,11 +5,11 @@ public class Ejercicio1{
 		Scanner teclado = new Scanner(System.in);
 
 		String barrio;
-		System.out.print("Ingrese su barrio ");
+		System.out.print("Ingrese su barrio: ");
 		barrio = teclado.nextLine();
 		
 		String direccion;
-		System.out.print("Ingrese la direccion de la comisaria mas cercana");
+		System.out.print("Ingrese la direccion de la comisaria mas cercana: ");
 		direccion= teclado.nextLine();
 
 		String entrecalle1;
@@ -20,7 +20,7 @@ public class Ejercicio1{
 		System.out.print("Entrecalle2: ");
 		entrecalle2= teclado.nextLine();
 
-		System.out.println("La comisaria de " + barrio + " se encuentra en " + direccion + "entre las calles " + entrecalle1 + " y " + entrecalle2);
+		System.out.println("La comisaria de " + barrio + " se encuentra en " + direccion + " entre las calles " + entrecalle1 + " y " + entrecalle2);
 
 	}
 }
