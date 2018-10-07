@@ -1,13 +1,14 @@
-Algoritmo Datos Personales
-	Escribir “Ingrese su DNI: “
+Algoritmo DatosPersonales
+	Escribir 'Ingrese su DNI: '
 	Leer DNI
-	Escribir “Ingrese su nombre: “
-	Leer nombre
-	Escribir “Ingrese su apellido: “
+	Escribir 'Ingrese su nombre: '
+	Leer Nombre
+	Escribir 'Ingrese su apellido: '
 	Leer apellido
-	Escribir “Ingrese su dirección: “
+	Escribir 'Ingrese su dirección: '
 	Leer dirección
-	Escribir “Ingrese su teléfono: “
-	Leer teléfono
-Escribir “DNI”, DNI “Nombre”, Nombre, “Apellido”, apellido, “Dirección”, dirección, “Teléfono”, Teléfono
-Fin Algoritmo
+	Escribir 'Ingrese su teléfono: '
+	Leer Teléfono
+	Escribir 'DNI ',DNI,' Nombre ',Nombre,' Apellido ',apellido,' Dirección ',dirección,' Teléfono ',Teléfono
+FinAlgoritmo
+

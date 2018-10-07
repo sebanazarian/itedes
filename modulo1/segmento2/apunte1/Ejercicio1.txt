@@ -1,11 +1,12 @@
 Algoritmo Comisaria
-	Escribir “Ingrese el nombre de su barrio:”
-	Leer Nombre Barrio
-	Escribir “Ingrese la dirección de la comisaría más cercana:”
-	Leer Dirección
-	Escribir “Ingrese la entrecalle1:”
-	Leer Entrecalles
-	Escribir “Ingrese la entrecalle2:”
-	Leer Entrecalles
-	Escribir “La comisaria de”, barrio, “se encuentra en la calle”, dirección,” entre “, entrecalle1 y entrecalle2
-Fin Algoritmo
+	Escribir 'Ingrese el nombre de su barrio:'
+	Leer barrio
+	Escribir 'Ingrese la dirección de la comisaría más cercana:'
+	Leer dirección
+	Escribir 'Ingrese la entrecalle1:'
+	Leer entrecalle1
+	Escribir 'Ingrese la entrecalle2:'
+	Leer entrecalle2
+	Escribir 'La comisaria de ',barrio,' se encuentra en la calle ',dirección,' entre ',entrecalle1,' y ',entrecalle2
+FinAlgoritmo
+

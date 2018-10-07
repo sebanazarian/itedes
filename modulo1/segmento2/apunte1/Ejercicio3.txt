@@ -1,13 +1,14 @@
-Algoritmo Números Inversos
-	Escribir “Ingrese un numero: “
+Algoritmo NúmerosInversos
+	Escribir 'Ingrese un numero: '
 	Leer numero1
-	Escribir “Ingrese un numero: “
+	Escribir 'Ingrese un numero: '
 	Leer numero2
-	Escribir “Ingrese un numero: “
+	Escribir 'Ingrese un numero: '
 	Leer numero3
-	Escribir “Ingrese un numero: “
+	Escribir 'Ingrese un numero: '
 	Leer numero4
-	Escribir “Ingrese un numero: “
-	Leer numero5	
-Escribir numero5, numero4, numero3, numero2, numero1
-Fin Algoritmo
+	Escribir 'Ingrese un numero: '
+	Leer numero5
+	Escribir numero5,numero4,numero3,numero2,numero1
+FinAlgoritmo
+

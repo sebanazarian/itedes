@@ -1,8 +1,9 @@
 Algoritmo Sumador
-	Escribir “Ingrese un número”
+	Escribir 'Ingrese un número'
 	Leer numero1
-	Escribir “Ingrese un número”
+	Escribir 'Ingrese un número'
 	Leer numero2
-	Resultado= numero1 + numero2
-	Escribir “El resultado de la suma es “, resultado
-Fin Algoritmo
+	resultado <- numero1+numero2
+	Escribir 'El resultado de la suma es ',resultado
+FinAlgoritmo
+
