@@ -12,11 +12,21 @@ public class Ejercicio3{
 
 		if(caracter.toUpperCase().equals("A") || caracter.toUpperCase().equals("E") || caracter.toUpperCase().equals("I") || caracter.toUpperCase().equals("O") || caracter.toUpperCase().equals("U")){
 			opcion = "vocal";
-		}else{
+		}else if(isNumeric(caracter)){
+			opcion="es numero";
+		}
+		else{
 			opcion="consonante";
 		}
 		System.out.println(caracter.toString() + " es " + opcion );
 
 	}	
-
+	private static boolean isNumeric(String cadena){
+        try {
+			Integer.parseInt(cadena);
+			return true;
+		} catch (NumberFormatException nfe){
+		return false;
+		}
+	}
 }

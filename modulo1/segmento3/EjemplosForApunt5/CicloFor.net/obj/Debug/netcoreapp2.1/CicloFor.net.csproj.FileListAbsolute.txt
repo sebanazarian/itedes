@@ -1,0 +1,11 @@
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/bin/Debug/netcoreapp2.1/CicloFor.net.deps.json
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/bin/Debug/netcoreapp2.1/CicloFor.net.runtimeconfig.json
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/bin/Debug/netcoreapp2.1/CicloFor.net.runtimeconfig.dev.json
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/bin/Debug/netcoreapp2.1/CicloFor.net.dll
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/bin/Debug/netcoreapp2.1/CicloFor.net.pdb
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/obj/Debug/netcoreapp2.1/CicloFor.net.csprojAssemblyReference.cache
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/obj/Debug/netcoreapp2.1/CicloFor.net.csproj.CoreCompileInputs.cache
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/obj/Debug/netcoreapp2.1/CicloFor.net.AssemblyInfoInputs.cache
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/obj/Debug/netcoreapp2.1/CicloFor.net.AssemblyInfo.cs
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/obj/Debug/netcoreapp2.1/CicloFor.net.dll
+/home/alumno/src/modulo1/segmento3/EjemplosForApunt5/CicloFor.net/obj/Debug/netcoreapp2.1/CicloFor.net.pdb
