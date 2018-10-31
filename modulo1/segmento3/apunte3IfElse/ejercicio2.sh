@@ -4,30 +4,30 @@ read -p "Ingrese un dia (1-Lunes,2-Martes,3-Miercoles,4-Jueves,5-Viernes,6-Sabad
 
 declare respuesta=""
 
-if ["$dia" == "1"]
+if [ "$dia" == "1" ]
 then
-	respuesta = "Lunes"
-elif ["$dia" == "2"]
+	respuesta="Lunes"
+elif [ "$dia" == "2" ]
 then
-	respuesta ="Martes"
-elif ["$dia" == "3"]
+	respuesta="Martes"
+elif [ "$dia" == "3" ]
 then
-	respuesta ="Miercoles"
-elif ["$dia" == "4"]
+	respuesta="Miercoles"
+elif [ "$dia" == "4" ]
 then
-	respuesta ="Jueves"
-elif ["$dia" == "5"]
+	respuesta="Jueves"
+elif [ "$dia" == "5" ]
 then
-	respuesta ="Viernes"
-elif ["$dia" == "6"]
+	respuesta="Viernes"
+elif [ "$dia" == "6" ]
 then
-	respuesta ="Sabado"
-elif ["$dia" == "7"]
+	respuesta="Sabado"
+elif [ "$dia" == "7" ]
 then
-	respuesta ="Domingo"
+	respuesta="Domingo"
 else
-	respuesta ="Error"
+	respuesta="Error"
 fi
-	echo "El dia es " + $dia
+	echo "El dia es   $respuesta "
 exit 0
 

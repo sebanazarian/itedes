@@ -11,35 +11,41 @@ namespace ejercicio2.net
 
 			string resultado;
 
-			switch (dia)
+			if (dia==1)
 			{
-				case 1:
-					resultado="lunes";
-					break;
-				case 2:
+				resultado="lunes";
+			}
+			else if(dia==2)
+			{
 					resultado="Martes";
-					break;
-				case 3:
-					resultado="Miercoles";
-					break;
-				case 4:
-					resultado="Jueves";
-					break;
-				case 5:
-					resultado="Viernes";
-					break;
-				case 6:
-					resultado="Sabado";
-					break;
-				case 7:
-					resultado="domingo";
-					break;
-				default:
-					resultado="error";
-					break;
+			}
+			else if(dia==3)
+			{
+				resultado="Miercoles";
+			}
+			else if(dia==4)
+			{
+				resultado="Jueves";
+			}
+			else if(dia==5)
+			{
+				resultado="Viernes";
+			}
+			else if(dia==6)
+			{
+				resultado="Sabado";
+			}
+			else if(dia==7)
+			{
+				resultado="domingo";
+			}
+			else
+			{
+				resultado="error";
+			
 			}
 
-			Console.WriteLine("El dia es " + resultado);
+			Console.WriteLine(resultado);
         }
     }
 }
