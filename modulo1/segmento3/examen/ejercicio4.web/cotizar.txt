@@ -1,0 +1,16 @@
+function cotizar(){
+	
+	let resultado=0;
+	let text='';
+	 pesos= parseFloat(document.getElementById('pesos').value);
+	 dolar= parseFloat(document.getElementById('dolar').value);
+	
+	if(pesos>0 && dolar>0){
+		resultado =	pesos*dolar;
+		text +=  `USD ${resultado.toString()} <br>`;
+	}else{
+		text = "Los valores deben ser mayor a 0";
+	}
+
+	document.getElementById('parrafo').innerHTML=text;
+}

@@ -8,7 +8,7 @@ read -p "Ingrese la altura: " altura
 for(( i=0; i<$altura;i++ )){
 	linea=""
 	for(( j=0; j<$base;j++ )){
-		linea+="l"
+		linea+="x"
 	}
 	
 	echo " $linea "
