@@ -1,9 +1,13 @@
 linea=""
-vueltasi= 5
-vueltasj= 1
-for i in range(0,vueltasi,1):
-    print(i)
-    p+= +1
-    for j in range(0,vueltasj,1):
-        linea+="x"
-        
+vueltasi= int(input("Ingrese el maximo"))
+
+for i in range(vueltasi):
+	linea = linea + "x"
+	print(linea)
+
+for i in reversed(range(vueltasi - 1)):
+	linea=""
+	for j in range(i):
+		linea = linea + "x"
+
+	print(linea)
