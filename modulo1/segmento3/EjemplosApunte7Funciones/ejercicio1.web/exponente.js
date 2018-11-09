@@ -1,5 +1,5 @@
 function potenciar(base,exponente){
-	resultado=base;
+	let resultado=base;
 
 	for(i=1;i<exponente;i++){
 
@@ -12,10 +12,10 @@ function potenciar(base,exponente){
 
 function exponente(){
 	
-	num1 = parseInt(prompt("Base: "));
-	num2 = parseInt(prompt("Exponente: "));
+	let num1 = parseInt(prompt("Base: "));
+	let num2 = parseInt(prompt("Exponente: "));
 
-	resultado = potenciar(num1,num2);
+	let resultado = potenciar(num1,num2);
 	
 	alert(`${resultado}`);
 }
