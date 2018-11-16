@@ -16,15 +16,14 @@ def sortear(lista):
 	return listaJuego[random]
 
 #MAIN
-
+print("*************AHORCADO********")
+print("-----------------------------")
+print("-----------------------------")
 listaJuego=generarBaseDatos()
 
-print(sortear(listaJuego))
 palabra=sortear(listaJuego)
-
 #CONVIERTO PALABRA EN LISTA
 Palabra=list(palabra)
-
 #INICIALIZO VARIABLES 
 vidas=6
 faltan=len(Palabra)
@@ -50,6 +49,7 @@ while vidas>0 and faltan>0:
 		print("Vidas: " , vidas)
 	
 if faltan==0:
+	print("***********GANASTE!!!!!!")
 	print("La palabra es :", palabra)
 elif vidas==0:
 	print("Perdio!!!")
