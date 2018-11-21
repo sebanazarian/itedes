@@ -4,10 +4,11 @@ declare -i num
 declare -i maximo=0
 while [[ $num != 0 ]];do
 	read -p "Ingrese un numero: " num
-	if [[ $num > $maximo ]]
+	if [[ $num -gt $maximo ]]
 	then
 		maximo=$num
-		echo $maximo
+		echo "max" $maximo
+		echo "num" $num
 	fi
 done
 
