@@ -10,9 +10,10 @@ def enviarMail(cuentaOrigen,subject,text):
 
 	# Gmail Sign In
 	gmail_sender = cuentaOrigen['user']
-	gmail_passwd = cuentaOrigen['pass']
+	gmail_passwd = cuentaOrigen['pas']
 
 	to = listaDestinatarios
+	#to="sebanaza@hotmail.com"
 	subject = subject
 	text = text
 	
@@ -37,12 +38,13 @@ def enviarMail(cuentaOrigen,subject,text):
 def cargarCuentaOrigen():	
 	datosCuentaOrigen={}
 	datosCuentaOrigen['user']=input("Ingrese su cuenta origen: ")
-	datosCuentaOrigen['pass']=input("Ingrese su contrasena: ")
+	datosCuentaOrigen['pas']=input("Ingrese su contrasena: ")
 	datosCuentaOrigen['smtp']=input("SMTP: ")
 		
-	#ESCRIBE ARCHIVO CON LOS DESTINATARIOS
-	with open('cuentaorigen.txt', 'w') as filehandle:  
-		filehandle.writelines("%s\n" % lista for lista in datosCuentaOrigen)
+	#ESCRIBE ARCHIVO CUENTA ORIGEN
+	#with open('cuentaorigen.txt', 'w') as filehandle:  
+	for clave, valor in datosCuentaOrigen.iteritems():
+		print(clave,valor)
 
 	return datosCuentaOrigen
 
@@ -65,9 +67,9 @@ def cargarDestinatarios():
 	listaDestinatarios=[]
 	
 	#LEER LISTA CARGADA
-	with open('listfile.txt', 'r') as filehandle:
-		filecontents = filehandle.readlines()
-		for line in filecontents:
+	with open('listfile.txt', 'r') as listaDesti:
+		listaContenido = listaDesti.readlines()
+		for line in listaContenido:
 			current_place = line[:-1]
 			listaDestinatarios.append(current_place)
 
