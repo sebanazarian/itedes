@@ -75,7 +75,7 @@ def cargarDestinatarios():
 
 	#CARGA DESTINATARIOS NUEVOS
 	seguir="si"
-	while seguir=="si":
+	while seguir!="no":
 		lista=input("Ingrese los destinatarios que desee: ")
 		listaDestinatarios.append(lista)
 		seguir=input("Desea agregar otro destinatario(si/no): ")
