@@ -50,6 +50,7 @@ def buscarAlumnosxApellido(alumnos,apellido):
 	
 	if contador == 0:
 		print("No existe el alumno")
+
 def limpiar():
 	os.system('clear')
 
@@ -57,7 +58,6 @@ def limpiar():
 import os
 alumnos=[]
 opcionMenu=''
-alumno=''
 while opcionMenu !="0":
 	print("1-Cargar Alumnos")
 	print("2-Mostrar Alumnos")
@@ -70,20 +70,22 @@ while opcionMenu !="0":
 	opcion='si'
 	if opcionMenu == "1":
 		while opcion!='no':
-			alumno=agregarAlumnos(alumnos)
+			alumnos=agregarAlumnos(alumnos)
 			limpiar()
 			opcion=input("Desea agregar otro alumno: ")
 
-		escribirArchivo(alumno)
+		escribirArchivo(alumnos)
 	
 	elif opcionMenu == "2":
 
-		if alumno=="":
+		if not alumnos:
 			limpiar()
 			print("Debe cargar un alumno minimo")
+			input("...pulsa una tecla para volver al menu principal")
+			limpiar()
 		else:
 			limpiar()
-			mostrarAlumnos(alumno)
+			mostrarAlumnos(alumnos)
 			input("...pulsa una tecla para volver al menu principal")
 			limpiar()
 
