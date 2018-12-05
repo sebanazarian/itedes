@@ -35,85 +35,131 @@ def enviarMail(cuentaOrigen,subject,text):
 	server.quit()
 
 
-def cargarCuentaOrigen():	
-	datosCuentaOrigen={}
-	datosCuentaOrigen['user']=input("Ingrese su cuenta origen: ")
-	datosCuentaOrigen['pas']=input("Ingrese su contrasena: ")
-	datosCuentaOrigen['smtp']=input("SMTP: ")
-		
-	#ESCRIBE ARCHIVO CUENTA ORIGEN
-	#with open('cuentaorigen.txt', 'w') as filehandle:  
-	for clave, valor in datosCuentaOrigen.iteritems():
-		print(clave,valor)
-
-	return datosCuentaOrigen
 
 
-def mostrarListaDestinatarios():
-	
-	listaDestinatarios=[]
+def loadListDestinatarios(listaDestinatarios):
 	#LEER LISTA CARGADA
 	print("Destinatarios: ")
 	print("----------------")
-	with open('listfile.txt', 'r') as filehandle:
-		filecontents = filehandle.readlines()
-		for line in filecontents:
-			current_place = line[:-1]
-			listaDestinatarios.append(current_place)
-			print(current_place)
+	print(listaDestinatarios)
 	print("----------------")
 	
-def cargarDestinatarios():
-	listaDestinatarios=[]
+	#with open('listDestinatarios.json', 'r') as filehandle:
+	#	filecontents = filehandle.readlines()
+	#	for line in filecontents:
+	#		current_place = line[:-1]
+	#		listaDestinatarios.append(current_place)
+	#		print(current_place)
 	
+def saveListDestinatarios(listaDestinatarios):
 	#LEER LISTA CARGADA
-	with open('listfile.txt', 'r') as listaDesti:
-		listaContenido = listaDesti.readlines()
-		for line in listaContenido:
-			current_place = line[:-1]
-			listaDestinatarios.append(current_place)
+	#with open('listDestinatarios.json', 'r') as listaDesti:
+	#	listaContenido = listaDesti.readlines()
+	#	for line in listaContenido:
+	#		current_place = line[:-1]
+	#		listaDestinatarios.append(current_place)
 
 	#CARGA DESTINATARIOS NUEVOS
 	seguir="si"
 	while seguir!="no":
 		lista=input("Ingrese los destinatarios que desee: ")
-		listaDestinatarios.append(lista)
+		if lista in listaDestinatarios:		
+			print("El destinatario ya existe")
+		else:
+			listaDestinatarios.append(lista)
+
 		seguir=input("Desea agregar otro destinatario(si/no): ")
 
+	return listaDestinatarios
+	
 	#ESCRIBE ARCHIVO CON LOS DESTINATARIOS
-	with open('listfile.txt', 'w') as filehandle:  
-		filehandle.writelines("%s\n" % lista for lista in listaDestinatarios)
+	#with open('listDestinatarios.json', 'w') as filehandle:  
+		#filehandle.writelines("%s\n" % lista for lista in listaDestinatarios)
 
-def encabezadoMenu():
-	limpiarConsola()
+def saveFileDestinatarios(listaDestinatarios):
+	with open('fileDestinatarios.json','w') as fileOut:
+		json.dump(listaDestinatarios,fileOut)
+
+def loadFileDestinatarios(listaDestinatarios):
+	if path.exists('fileDestinatarios.json'):
+		print("EXISTE ARCHIVO")
+		#LEER LISTA CARGADA
+		with open('fileDestinatarios.json', 'r') as fileIn:
+			listaDestinatarios = json.load(fileIn)
+		#for line in listaDestinatarios:
+			#current_place = line[:-1]
+			#listaDestinatarios.append(current_place)
+	else:	
+		print("NO EXISTE ARCHIVO")
+	return listaDestinatarios
+
+def loadFileOrigen(dataOriginAccount):
+	if path.exists('fileOriginAccount.json'):
+		print("EXISTE ARCHIVO")
+		#LEER LISTA CARGADA
+		with open('fileDestinatarios.json', 'r') as fileIn:
+			dataOriginAccount = json.load(fileIn)
+		#for line in listaDestinatarios:
+			#current_place = line[:-1]
+			#listaDestinatarios.append(current_place)
+	else:	
+		print("NO EXISTE ARCHIVO")
+
+	return dataOriginAccount
+
+def saveObjectAccount():	
+	dataOriginAccount = {}
+
+	dataOriginAccount['user']=input("Ingrese su cuenta origen: ")
+	dataOriginAccount['pas']=input("Ingrese su contrasena: ")
+	dataOriginAccount['smtp']=input("SMTP: ")
+		
+	#ESCRIBE ARCHIVO CUENTA ORIGEN
+	#with open('cuentaorigen.txt', 'w') as filehandle:  
+	#for clave, valor in datosCuentaOrigen.iteritems():
+	#	print(clave,valor)
+
+	return dataOriginAccount
+
+def saveFileOriginAccount(dataOriginAccount):
+	with open('fileOriginAccount.json','w') as fileOut:
+		json.dump(dataOriginAccount,fileOut)
+
+def headerMenu():
+	clearConsole()
 	print("*************ENVIAR MAIL********")
 	print("--------------------------------")
 	print("--------------------------------")
 
-def limpiarConsola():
+def clearConsole():
 	os.system('clear')
 	print(" ")
 	print(" ")
 
 #MAIN
 import os
+import json
+import os.path as path
 
+listaDestinatarios=[]
+dataOriginAccount={}
+#LOAD LIST Destinatarios
+listaDestinatarios=loadFileDestinatarios(listaDestinatarios)
+#LOAD DICTIONARY Account
+dataOriginAccount=loadFileOrigen(dataOriginAccount)
 
 option = ""
 while option != "0":
-	encabezadoMenu()
+	headerMenu()
 	print("1- Menu Destinatarios ")
 	print("2- Configurar Cuenta Origen ")
 	print("3- Enviar Mail ")
 	print("0- Salir ")
 	print(" ")
 	option=input("Ingrese la opcion deseada: ")
-
-
-
+	
 	if option == "1":
 		optionSubMenu=""
-		datosCuentaOrigen={}
 		while optionSubMenu !="0":
 			print(" ")
 			print(" ")
@@ -122,14 +168,14 @@ while option != "0":
 			print("0- Menu Principal ")
 			optionSubMenu=input("Ingrese la opcion deseada: ")
 			if optionSubMenu == "1":
-				cargarDestinatarios()
-				limpiarConsola()
+				listaDestinatarios=saveListDestinatarios(listaDestinatarios)
+				clearConsole()
 			elif optionSubMenu== "2":
-				limpiarConsola()
-				mostrarListaDestinatarios()
+				clearConsole()
+				loadListDestinatarios(listaDestinatarios)
 
 	elif option == "2":
-		datosCuentaOrigen=cargarCuentaOrigen()
+		dataOriginAccount=saveObjectAccount()
 		input("..datos cargados pulse una tecla para continuar")
 	
 	elif option == "3":
@@ -138,4 +184,7 @@ while option != "0":
 		else:
 			enviarMail(datosCuentaOrigen,'hola','chau')
 			input("...pulsa una tecla para continuar")
+	elif option=="0":
+		saveFileDestinatarios(listaDestinatarios)
+		saveFileOriginAccount(dataOriginAccount)
 
