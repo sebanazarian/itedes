@@ -10,7 +10,7 @@ function par(){
 		par=false;
 	}
 
-	if(respuesta){
+	if(par){
 		respuesta="Es un numero par";
 		console.log(respuesta);
 	}else{
