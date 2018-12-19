@@ -58,15 +58,22 @@ public class Ahorcado{
         Integer faltan= palabraLista.size();
         System.out.println(faltan);
         ArrayList<String> palabraMostrar  = new ArrayList<String>();
-
+        
+        //CREO LISTA VACIA
         for(int i=0;i<palabraLista.size();i++){
             palabraMostrar.add("-");
         }
         System.out.println(palabraMostrar);
+
         while(vidas>0 and faltan>0){
-            System.otra.println(palabraMostrar);
+            System.otra.println(palabraMostrar);//LISTA VACIA
             System.out.print("Ingrese una letra");
             String letra=  teclado.nextLine();
+
+            if  palabraLista.contains(letra){
+                faltan=faltan - palabraLista.size(letra)
+                System.out.print("Letras Restantes: "+ faltan);
+            }
 
         }
 
