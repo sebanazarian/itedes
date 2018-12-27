@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
- 
+import java.util.Collections;
 
 
 public class Ahorcado{
@@ -30,12 +30,13 @@ public class Ahorcado{
         return listaJuego.get(n);
     }
     
-    public static ArrayList<Character> convertStringToArraylist(String str) {
-        ArrayList<Character> charList = new ArrayList<Character>();      
-        for(int i = 0; i<str.length();i++){
-            charList.add(str.charAt(i));
-        }
-        return charList;
+    public static ArrayList<String> convertStringToArraylist(String palabra) {
+        ArrayList<String> stringList = new ArrayList<String>();      
+        stringList=Arrays.asList(palabra);
+        // for(int i = 0; i<palabra.length();i++){
+        //     stringList.add(palabra.(i));
+        // }
+        return stringList;
     }
 
     public static void main(String args[]){
@@ -49,8 +50,8 @@ public class Ahorcado{
         palabra=sortear(listaJuego);
         System.out.println(palabra);
 
-        //Convierto palabra en lista
-        ArrayList<Character> palabraLista  = new ArrayList<Character>();
+        //Convierto palabra en lista para ir comparando
+        ArrayList<String> palabraLista  = new ArrayList<String>();
         palabraLista=convertStringToArraylist(palabra);
 
         //Inicializo variables
@@ -65,14 +66,20 @@ public class Ahorcado{
         }
         System.out.println(palabraMostrar);
 
-        while(vidas>0 and faltan>0){
-            System.otra.println(palabraMostrar);//LISTA VACIA
-            System.out.print("Ingrese una letra");
+        while(vidas>0 && faltan>0){
+            System.out.println(palabraMostrar);//LISTA VACIA
+            System.out.print("Ingrese una letra: ");
             String letra=  teclado.nextLine();
-
-            if  palabraLista.contains(letra){
-                faltan=faltan - palabraLista.size(letra)
+            System.out.println(faltan);
+            System.out.println(letra);
+            System.out.println(palabraLista);
+            if (palabraLista.contains("o")){
+                faltan=faltan - Collections.frequency(palabraLista,letra);
                 System.out.print("Letras Restantes: "+ faltan);
+
+                // for(i=0;i<palabraLista.size();i++){
+                //     if()
+                // }
             }
 
         }
