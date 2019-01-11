@@ -5,7 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class EjemploOrdenar1{
 
     public static void main(String args[]){
-        Scanner teclado=new Scanner(System.in);
         ArrayList<Integer> vector  = new ArrayList<Integer>();
 
         for(Integer i=0;i<100;i++){
