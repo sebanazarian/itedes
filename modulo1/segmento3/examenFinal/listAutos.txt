@@ -1,2 +1,1 @@
-{'patente': 'pepe', 'modelo': 'trend', 'color': 'rojo', 'marca': 'vw'}
-{'patente': 'olaaa', 'modelo': 'sur', 'color': 'azul', 'marca': 'polo'}
+{'modelo': '3', 'patente': '0', 'color': '2', 'marca': '20'}
