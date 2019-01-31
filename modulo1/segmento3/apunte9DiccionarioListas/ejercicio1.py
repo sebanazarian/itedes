@@ -34,7 +34,30 @@ def buscarAlumnosxDni(alumnos,dni):
 def escribirArchivo(listaAlumnos):
 		with open('listAlumnos.py', 'w') as fileAlumnos:
 	 		fileAlumnos.writelines("%s\n" % lista for lista in listaAlumnos )
-	
+def eliminarAlumnosxApellido(alumnos,apellido):
+    contador=0;
+    i=0;
+    for alumno in alumnos:
+        if alumno['apellido']==apellido:
+            del alumnos[i];
+            contador=contador +1;
+            print("Alumno Eliminado");
+        i=i+1;
+    if contador==0:
+        print("El alumno no existe");
+
+def eliminarAlumnosxDni(alumnos,dni):
+    contador=0;
+    i=0;
+    for alumno in alumnos:
+        if alumno['dni']==dni:
+            del alumnos[i];
+            contador = contador +1;
+            print("Alumno Eliminado");
+        i=i+1;
+    if contador==0:
+        print("El alumno no existe");
+
 def buscarAlumnosxApellido(alumnos,apellido):
 	contador=0
 	for alumno in alumnos:
@@ -63,6 +86,8 @@ while opcionMenu !="0":
 	print("2-Mostrar Alumnos")
 	print("3-Busqueda por DNI")
 	print("4-Busqueda por apellido")
+	print("5-Eliminar por apellido")
+	print("6-Eliminar por dni")
 	print("0-Salir")
 	print("")
 	opcionMenu=input("Ingrese la opcion deseada: ")
@@ -100,5 +125,17 @@ while opcionMenu !="0":
 			limpiar()
 			apellido=input("Ingrese el apellido del alumno ")
 			buscarAlumnosxApellido(alumnos,apellido)
+			input("...pulsa una tecla para volver al menu principal")
+			limpiar()
+	elif opcionMenu == "5":
+			limpiar()
+			apellido=input("Ingrese el apellido del alumno ")
+			eliminarAlumnosxApellido(alumnos,apellido)
+			input("...pulsa una tecla para volver al menu principal")
+			limpiar()
+	elif opcionMenu == "6":
+			limpiar()
+			dni=input("Ingrese el dni del alumno ")
+			eliminarAlumnosxDni(alumnos,dni)
 			input("...pulsa una tecla para volver al menu principal")
 			limpiar()
