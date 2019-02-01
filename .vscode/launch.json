@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Program",
+            "request": "launch",
+            "mainClass": "modulo2.segmento1.veterinaria.Program"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Ejercicio1BurbujeoDesc",
+            "request": "launch",
+            "mainClass": "Ejercicio1BurbujeoDesc"
+        }
+    ]
+}
