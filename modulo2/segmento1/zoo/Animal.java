@@ -4,7 +4,7 @@ public abstract class Animal{
     private String name;
 
     //Constructor
-    public Animal(Integer age, Double weight, String name) {
+    public Animal(String name,Double weight) {
         this.age = 0;
         this.weight = weight;
         this.name = name;
