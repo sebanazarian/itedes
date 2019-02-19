@@ -1,12 +1,16 @@
 public class Dog extends Animal{
     private String size;
 
-    public Dog(Integer age, Double weight, String name){
-        super(age,weight,name);
+    public Dog(String name,Double weight,String size){
+        super(name,weight);
         this.size = size;
     }
 
+    public String getSize(){
+        return size;
+    }
 
+    public void talk(){
+        System.out.println("guau guau");
+    }
 }
-
-
