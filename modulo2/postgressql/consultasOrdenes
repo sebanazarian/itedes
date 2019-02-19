@@ -1,0 +1,37 @@
+﻿-- 1) idproducto, descripcion,, nombre,contacto,celular -- categoria a la que pertenece el producto
+
+select 
+	p.productoid,
+	p.descripcion,
+	c.nombrecat,
+	prov.nombreprov,
+	prov.contacto,
+	prov.celuprov
+	
+from productos p
+inner join categorias c on p.categoria = c.categoriaid
+inner join proveedores prov on p.proveedorid = prov.proveedorid
+
+
+--2) id de la orden,fecham  nombre y apellido del vendedor, nombre y apelido del cliente,
+select o.ordenid,o.fechaorden,(e.nombre || ' ' || e.apellido) as NombreApellido,c.nombrecontacto
+
+from  ordenes o
+inner join clientes c on o.clienteid = c.clienteid
+inner join empleados e on o.empleadoid = e.empleadoid
+
+
+select p.descripcion,c.nombrecontacto
+from ordenes o
+inner join detalle_ordenes dt on o.ordenid = dt.ordenid
+inner join productos p on dt.productoid = p.productoid
+inner join clientes c on o.clienteid = c.clienteid
+where c.nombrecontacto = 'PABLO PONCE'
+
+--3)
+select o.ordenid,o.fechaorden,(e.nombre || ' ' || e.apellido) as NombreApellido,c.nombrecontacto
+
+from  ordenes o
+inner join clientes c on o.clienteid = c.clienteid
+
+
