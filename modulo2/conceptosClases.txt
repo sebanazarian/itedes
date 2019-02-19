@@ -1,0 +1,39 @@
+metodos no mas de 20
+atributos no mas de 5
+lineas de codigo no mas 500 700
+
+mvn compile
+mvn clean compile
+
+
+Relaciones entre clases
+
+1- Herencia
+
+Super Clase
+
+Clase derivada 1 - Clase derivada 2 - Clase derivada 3
+
+Se dice que la clase derivada uno extiende a la superclase ( )
+
+2-Composicion
+
+Tengo clase todo - tengo otra clase que es la parte 
+ 
+por ejemplo una clase Persona que tiene datos y otra clase DatosPersonales que tiene mail, telefono
+
+la clase persona no puede existir sin esa clase datosPersonales y la de DatosPersonales no tiene sentido si existe sola
+
+rombo negro
+3-Agregación
+el todo no puede existir sin la parte pero la parte tiene peso propio
+
+rombo blanco
+4- Asociacion
+
+se simboliza con una lineas
+
+la parte puede existir sin el todo y el todo puede existir sin la parte
+relacion debil
+
+ejemplo una persona y un curso
