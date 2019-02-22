@@ -2,9 +2,18 @@ metodos no mas de 20
 atributos no mas de 5
 lineas de codigo no mas 500 700
 
-mvn compile
-mvn clean compile
+maven
 
+mvn clean compile exec:java
+mvn clean compile package
+java -jar nombre.jar
+mvn archetype:generate 
+-DgroupId=com.itedes 
+-DartifactId=prueba 
+-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+REPOSITORIOS DE maven
+MAVEN REPOSITORY
 
 Relaciones entre clases
 
