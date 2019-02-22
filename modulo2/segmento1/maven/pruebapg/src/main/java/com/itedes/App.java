@@ -69,6 +69,7 @@ public class App
         
     }
     public static void main( String[] args ) {
+        initializeConnection();
         Scanner teclado = new Scanner(System.in);
         Integer  opcion= 99;
 
