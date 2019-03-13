@@ -21,7 +21,7 @@ public class App
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/Pedidos",
+                "jdbc:postgresql://localhost:5432/pedidos",
                     "dba", 
                     "1234"
             );
@@ -52,6 +52,7 @@ public class App
         Integer  opcion= 99;
         Integer  opcionSub= 99;
         Integer categoriaid = 0;
+        Integer idCliente = 0;
 
         while(opcion!=0){
             opcionSub=99;
@@ -181,7 +182,7 @@ public class App
                         System.out.println("==== == =========");
                         System.out.println();
                         System.out.println("Ingrese id del cliente: ");
-                        Integer idCliente = Integer.parseInt(teclado.nextLine());
+                        idCliente = Integer.parseInt(teclado.nextLine());
                         System.out.println("Ingrese dni del cliente: ");
                         String dniCliente = teclado.nextLine();
                         System.out.println("Ingrese nombrecia del cliente: ");
@@ -211,40 +212,55 @@ public class App
                         //EDITAR
                         clearScreen();
         
-                        System.out.println("Modificar categoria:");
+                        System.out.println("Modificar cliente:");
                         System.out.println("==== == =========");
                         System.out.println();
                         try {
-                            listarCategorias();
-                            System.out.println("Ingrese el id de Categoria a modificar");
-                            categoriaid =Integer.parseInt(teclado.nextLine());
+                            listarClientes();
+                            System.out.println("Ingrese el id de Cliente a modificar");
+                            idCliente =Integer.parseInt(teclado.nextLine());
                         } catch (Exception e) {
                             System.out.println("Error en el ingreso de datos");
                         }
-                        System.out.println("Ingrese nombre de Categoria");
-                        String descripcionCat = teclado.nextLine();
+                        System.out.println("Ingrese dni del cliente: ");
+                        String dniCliente = teclado.nextLine();
+                        System.out.println("Ingrese nombrecia del cliente: ");
+                        String nombreciaCliente = teclado.nextLine();
+                        System.out.println("Ingrese nombre de contacto del cliente: ");
+                        String contactocliente = teclado.nextLine();
+                        System.out.println("Ingrese direccion del cliente: ");
+                        String direccionCliente = teclado.nextLine();
+                        System.out.println("Ingrese fax del cliente: ");
+                        String faxCliente = teclado.nextLine();
+                        System.out.println("Ingrese email del cliente: ");
+                        String emailCliente = teclado.nextLine();
+                        System.out.println("Ingrese celular del cliente: ");
+                        String celularCliente = teclado.nextLine();
+                        System.out.println("Ingrese fijo del cliente: ");
+                        String fijoCliente = teclado.nextLine();
+        
     
-                        updateCategoria(categoriaid,descripcionCat);
+                        updateCliente(idCliente,dniCliente,nombreciaCliente,contactocliente,direccionCliente,faxCliente,emailCliente,celularCliente,fijoCliente);
         
                     }else if(opcionSub==3){
                         //BAJA
                         clearScreen();
         
-                        System.out.println("Baja de categoria:");
+                        System.out.println("Baja de Cliente:");
                         System.out.println("==== == =========");
                         System.out.println();
                         try {
-                            System.out.println("Ingrese id de Categoria");
-                            categoriaid =Integer.parseInt(teclado.nextLine());
+                            System.out.println("Ingrese id de Cliente");
+                            idCliente =Integer.parseInt(teclado.nextLine());
                         
                         } catch (Exception e) {
                             System.out.println("Error en el ingreso de datos");
                         }
                         
-                        //removeCliente(categoriaid);
+                        removeCliente(idCliente);
         
                     }else if(opcionSub==4){
-                        //listarClientes();
+                        listarClientes();
                         System.out.println("Presione Enter para Continuar");
                         teclado.nextLine();
                     }
@@ -325,7 +341,7 @@ public class App
     public static void addCliente(Integer clienteid,String dniCliente,String nombreciaCliente,String contactocliente,String direccionCliente,String faxCliente,String emailCliente,String celularCliente,String fijoCliente){
         try {
 			String queryString = "INSERT INTO clientes (clienteid,cedula_ruc, nombrecia, nombrecontacto, direccioncli,fax,email,celular,fijo) "
-				+ "VALUES("+ clienteid +",'" + dniCliente + "'', '" + nombreciaCliente + "' , '"+ contactocliente+"','"+direccionCliente+"','"+faxCliente+"','"+ emailCliente +"','"+ celularCliente +"','"+ fijoCliente +"')";
+				+ "VALUES("+ clienteid +",'" + dniCliente + "', '" + nombreciaCliente + "' , '"+ contactocliente+"','"+direccionCliente+"','"+faxCliente+"','"+ emailCliente +"','"+ celularCliente +"','"+ fijoCliente +"')";
 			
 			statement.executeUpdate(queryString);
 		} catch(Exception e) {
@@ -333,6 +349,81 @@ public class App
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
         }
+    }
+
+    public static void updateCliente(Integer clienteid,String dniCliente,String nombreciaCliente,String contactocliente,String direccionCliente,String faxCliente,String emailCliente,String celularCliente,String fijoCliente){
+        try {
+            Scanner teclado = new Scanner(System.in);
+            String queryString = "Update clientes "
+                                + "set cedula_ruc = '"+ dniCliente +"',"
+                                + "nombrecia='"+ nombreciaCliente +"',"
+                                + "nombrecontacto='"+ contactocliente +"',"
+                                + "direccioncli='"+ direccionCliente +"',"
+                                + "fax='"+ faxCliente +"',"
+                                + "email='"+ emailCliente +"',"
+                                + "celular='"+ celularCliente +"',"
+                                + "fijo='"+ fijoCliente +"'"
+                                + "where clienteid ="+ clienteid;
+            System.out.println(queryString);
+            teclado.nextLine();
+            statement.executeUpdate(queryString);
+
+        } catch (Exception e) {
+            System.out.println("Error al modificar un cliente ");
+        }
+
+    }
+    public static void removeCliente(Integer clienteid){
+        try{
+            String queryString = "Delete FROM clientes where clienteid = " + clienteid;
+            
+            statement.executeUpdate(queryString);
+        }catch(Exception e){
+            System.out.println("Error al eliminar un cliente ");
+        }
+    }
+    
+    public static void listarClientes(){
+        try {
+            resulset = statement.executeQuery("SELECT * FROM clientes"); //espera resultado
+
+            System.out.println("Clientes presentes en la base de datos:");
+            System.out.println("========== ========= == == ==== == =====");
+            System.out.println();
+            
+            while(resulset.next()){
+                Integer clienteid= resulset.getInt("clienteid");
+                String  dniCliente = resulset.getString("cedula_ruc");
+                String  nombreciacliente = resulset.getString("nombrecia");
+                String  contactoCliente = resulset.getString("nombrecontacto");
+                String  direccion = resulset.getString("direccioncli");
+                String  fax = resulset.getString("fax");
+                String  email = resulset.getString("email");
+                String  celular = resulset.getString("celular");
+                String  fijo = resulset.getString("fijo");
+    
+                System.out.println("ID =" + clienteid);
+                System.out.println("DNI =" + dniCliente);
+                System.out.println("Nombre =" + nombreciacliente);
+                System.out.println("Contacto =" + contactoCliente);
+                System.out.println("Direccion =" + direccion);
+                System.out.println("Fax =" + fax);
+                System.out.println("Emai =" + email);
+                System.out.println("Celular =" + celular);
+                System.out.println("Fijo =" + fijo);
+
+                System.out.println();
+            }
+    
+            resulset.close();
+                
+        } catch (Exception e) {
+            System.out.println("Error al listar clientes");
+            e.printStackTrace();
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        } 
+        
     }
 
 }
